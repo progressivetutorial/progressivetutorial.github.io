@@ -68,3 +68,39 @@ if (mobileMenuToggle && navLinks) {
     navLinks.classList.toggle("active");
   });
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".carousel-track");
+  const images = document.querySelectorAll(".carousel-img");
+  const prevBtn = document.querySelector(".carousel-btn.prev");
+  const nextBtn = document.querySelector(".carousel-btn.next");
+
+  let currentIndex = 0;
+  const imagesPerView = window.innerWidth <= 768 ? 1 : 3;
+
+  function updateCarousel() {
+    const offset = currentIndex * (images[0].offsetWidth + 16); // +gap
+    track.style.transform = `translateX(-${offset}px)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (currentIndex < images.length - imagesPerView) {
+      currentIndex++;
+      updateCarousel();
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (currentIndex > 0) {
+      currentIndex--;
+      updateCarousel();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    updateCarousel();
+  });
+
+  updateCarousel(); // initial positioning
+});
+
