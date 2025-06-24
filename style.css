@@ -25,7 +25,7 @@
 }
 
 .logo-img {
-  height: 60px;        /* Adjust logo to match navbar height */
+  height: 100px;        /* Adjust logo to match navbar height */
   width: auto;
   object-fit: contain;
   border-radius: 6px;
@@ -36,7 +36,7 @@
     height: 60px;
   }
   .logo-img {
-    height: 40px;
+    height: 55px;
   }
 }
 
