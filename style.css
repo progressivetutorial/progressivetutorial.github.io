@@ -13,7 +13,7 @@
 }
 
 .logo-img {
-  height: 55px;           /* ⬅️ Increased height */
+  height: 75px;           /* ⬅️ Increased height */
   width: auto;
   max-width: 150px;       /* ⬅️ Optional: prevents huge images */
   margin-right: 0.75rem;
@@ -24,7 +24,7 @@
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 40px;          /* ⬅️ Still keeps it clean on mobile */
+    height: 55px;          /* ⬅️ Still keeps it clean on mobile */
     max-width: 100px;
   }
 }
