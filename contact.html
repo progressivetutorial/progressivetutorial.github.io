@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Progressive Tutorial</title>
+  <link rel="stylesheet" href="contact.css" />
+  <script defer src="contact.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container container">
+      <h1 class="logo">Progressive Tutorial</h1>
+      <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contact Form Section -->
+  <section class="contact-form-section">
+    <div class="contact-form-box">
+      <h2>Get in Touch</h2>
+      <p>We're here to help! Fill out the form and we'll get back to you as soon as possible.</p>
+      <form id="contactForm" action="https://formspree.io/f/meoklrww" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Progressive Tutorial. Built by Shadab</p>
+  </footer>
+
+</body>
+</html>
