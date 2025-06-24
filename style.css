@@ -23,12 +23,12 @@
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 100px;
+    height: 80px;
   }
 }
 .navbar {
   padding: 0.5rem 1rem;
-  height: 50px; /* Or set to 60px max-height */
+  height: auto; /* Or set to 60px max-height */
 }
 
 
