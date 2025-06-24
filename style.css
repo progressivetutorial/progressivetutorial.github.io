@@ -15,10 +15,19 @@
 .logo-img {
   height: 40px;
   width: auto;
+  max-width: 120px;
   margin-right: 0.5rem;
   vertical-align: middle;
   border-radius: 6px;
+  object-fit: contain;
 }
+@media (max-width: 768px) {
+  .logo-img {
+    height: 30px;
+    max-width: 90px;
+  }
+}
+
 
 body {
   font-family: 'Inter', sans-serif;
