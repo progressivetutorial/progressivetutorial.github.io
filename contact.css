@@ -11,7 +11,7 @@ body {
   line-height: 1.6;
 }
 
-/* Navbar (reuse your styles) */
+/* Navbar */
 .navbar {
   background-color: skyblue;
   color: white;
@@ -129,6 +129,7 @@ body {
   background-color: #2563eb;
 }
 
+/* Contact Info + Map Section */
 .contact-page-section {
   padding: 3rem 1rem;
   background: #eaf6fb;
@@ -140,11 +141,17 @@ body {
   gap: 2rem;
   margin-top: 3rem;
   justify-content: center;
+  align-items: stretch;
 }
 
-.contact-info-box, .map-box {
+.contact-info-box,
+.map-box {
   flex: 1 1 300px;
   max-width: 480px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
 }
 
 .contact-info-box h3 {
@@ -152,7 +159,6 @@ body {
   font-size: 1.2rem;
   color: #1d4ed8;
 }
-
 .contact-info-box p {
   font-size: 1rem;
   color: #333;
@@ -171,9 +177,8 @@ body {
   height: 250px;
   border-radius: 12px;
   border: none;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-
 
 /* Footer */
 footer {
