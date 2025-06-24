@@ -13,23 +13,33 @@
   gap: 0.75rem; /* spacing between image and text */
 }
 
+.navbar {
+  height: 80px;               /* Fixed height for navbar */
+  display: flex;
+  align-items: center;        /* Vertical centering */
+  padding: 0 1rem;
+  background-color: #1d4ed8;  /* Your navbar color */
+  position: sticky;           /* Optional: stick on scroll */
+  top: 0;
+  z-index: 999;
+}
+
 .logo-img {
-  height: 120px;           /* Set your desired visible size */
+  height: 60px;        /* Adjust logo to match navbar height */
   width: auto;
-  max-height: 100%;       /* Allow it to fill its parent */
   object-fit: contain;
   border-radius: 6px;
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    height: 60px;
+  }
   .logo-img {
-    height: 80px;
+    height: 40px;
   }
 }
-.navbar {
-  padding: 0.5rem 1rem;
-  height: auto; /* Or set to 60px max-height */
-}
+
 
 
 
