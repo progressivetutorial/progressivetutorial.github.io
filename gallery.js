@@ -3,6 +3,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const lightbox = document.getElementById("lightbox");
   const lightboxImg = document.getElementById("lightbox-img");
 
+  img.addEventListener("click", () => {
+  console.log("Image clicked:", img.src); // Debug
+  lightbox.style.display = "flex";
+  lightboxImg.src = img.src;
+  document.body.style.overflow = "hidden";
+});
+
   images.forEach((img) => {
     img.addEventListener("click", () => {
       lightbox.style.display = "flex";
