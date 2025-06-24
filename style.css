@@ -501,6 +501,11 @@ footer p {
   color: #333;
   line-height: 1.6;
 }
+.menu-toggle {
+  display: flex !important;
+  background-color: red; /* Temporary just to debug visibility */
+}
+
 
 /* Disable background scroll when popup is open */
 body.lock-scroll {
