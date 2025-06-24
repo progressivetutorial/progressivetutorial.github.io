@@ -83,7 +83,9 @@ body {
   padding: 4rem 1rem;
   background: #eaf6fb;
   min-height: 80vh;
+  text-align: center;
 }
+
 .contact-form-box {
   background: rgba(255, 255, 255, 0.6);
   border-radius: 20px;
@@ -92,8 +94,9 @@ body {
   padding: 2rem;
   max-width: 500px;
   width: 100%;
-  text-align: center;
+  margin: 0 auto; /* ← this ensures perfect center alignment */
 }
+
 .contact-form-box h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
