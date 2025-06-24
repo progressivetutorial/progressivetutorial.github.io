@@ -500,7 +500,6 @@ footer p {
   align-items: center;
   cursor: pointer;
   padding: 0.5rem;
-  background-color: red; /* just to test visibility */
   z-index: 9999;
   position: relative;
 }
