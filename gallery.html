@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery | Progressive Tutorial</title>
+  <link rel="stylesheet" href="gallery.css" />
+  <script defer src="gallery.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-container container">
+      <h1 class="logo">Progressive Tutorial</h1>
+      <div class="menu-toggle" id="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section">
+    <h2>Our Classroom Moments</h2>
+    <div class="gallery-grid">
+      <!-- Replace srcs with actual image paths in /images/ -->
+      <img src="images/class1.jpeg" alt="Classroom Photo 1" class="gallery-item" />
+      <img src="images/class2.jpeg" alt="Classroom Photo 2" class="gallery-item" />
+      <img src="images/class3.jpeg" alt="Classroom Photo 3" class="gallery-item" />
+      <img src="images/class4.jpeg" alt="Classroom Photo 4" class="gallery-item" />
+      <img src="images/class5.jpeg" alt="Classroom Photo 5" class="gallery-item" />
+      <img src="images/class6.jpeg" alt="Classroom Photo 6" class="gallery-item" />
+      <img src="images/class7.jpeg" alt="Classroom Photo 7" class="gallery-item" />
+      <img src="images/class8.jpeg" alt="Classroom Photo 8" class="gallery-item" />
+      <img src="images/class9.jpeg" alt="Classroom Photo 9" class="gallery-item" />
+      <img src="images/class10.jpeg" alt="Classroom Photo 10" class="gallery-item" />
+    </div>
+  </section>
+
+  <!-- Lightbox (hidden by default) -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-lightbox" id="closeLightbox">&times;</span>
+    <img id="lightboxImage" src="" alt="Preview" />
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Progressive Tutorial. Built by Shadab</p>
+  </footer>
+</body>
+</html>
