@@ -14,7 +14,7 @@
 }
 
 .logo-img {
-  height: 60px;           /* Set your desired visible size */
+  height: 120px;           /* Set your desired visible size */
   width: auto;
   max-height: 100%;       /* Allow it to fill its parent */
   object-fit: contain;
@@ -23,12 +23,12 @@
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 50px;
+    height: 100px;
   }
 }
 .navbar {
   padding: 0.5rem 1rem;
-  height: 20px; /* Or set to 60px max-height */
+  height: 50px; /* Or set to 60px max-height */
 }
 
 
