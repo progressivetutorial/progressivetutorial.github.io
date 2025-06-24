@@ -10,24 +10,23 @@
   font-size: 1.25rem;
   font-weight: 600;
   color: white;
+  gap: 0.75rem; /* spacing between image and text */
 }
 
 .logo-img {
-  height: 75px;           /* ⬅️ Increased height */
+  height: 50px;           /* Set your desired visible size */
   width: auto;
-  max-width: 150px;       /* ⬅️ Optional: prevents huge images */
-  margin-right: 0.75rem;
-  vertical-align: middle;
-  border-radius: 6px;
+  max-height: 100%;       /* Allow it to fill its parent */
   object-fit: contain;
+  border-radius: 6px;
 }
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 55px;          /* ⬅️ Still keeps it clean on mobile */
-    max-width: 100px;
+    height: 40px;
   }
 }
+
 
 
 body {
