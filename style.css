@@ -26,6 +26,10 @@
     height: 40px;
   }
 }
+.navbar {
+  padding: 0.5rem 1rem;
+  height: auto; /* Or set to 60px max-height */
+}
 
 
 
