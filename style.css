@@ -4,6 +4,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  border-radius: 6px;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background: #fdfdfd;
