@@ -34,7 +34,7 @@
 }
 
 .logo-img {
-  height: 60px;
+  height: 100px;
   width: auto;
   object-fit: contain;
   border-radius: 6px;
@@ -64,7 +64,7 @@
   }
 
   .logo-img {
-    height: 45px;
+    height: 65px;
   }
 
   .nav-links {
