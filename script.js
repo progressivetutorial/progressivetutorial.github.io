@@ -102,7 +102,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   updateCarousel(); // initial positioning
-});
 document.addEventListener("DOMContentLoaded", function () {
   const testimonialTrack = document.querySelector(".testimonial-track");
   const testimonialItems = document.querySelectorAll(".testimonial");
@@ -136,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
     clearInterval(autoSlideInterval);
   }
 
+  // Click buttons
   testimonialNext.addEventListener("click", () => {
     stopAutoSlide();
     nextTestimonial();
@@ -145,6 +145,27 @@ document.addEventListener("DOMContentLoaded", function () {
   testimonialPrev.addEventListener("click", () => {
     stopAutoSlide();
     prevTestimonial();
+    startAutoSlide();
+  });
+
+  // Swipe support for mobile
+  let startX = 0;
+  testimonialTrack.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].clientX;
+    stopAutoSlide();
+  });
+
+  testimonialTrack.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+    let diffX = startX - endX;
+
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0) {
+        nextTestimonial(); // swipe left → next
+      } else {
+        prevTestimonial(); // swipe right → prev
+      }
+    }
     startAutoSlide();
   });
 
