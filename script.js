@@ -16,11 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Scroll-to-top button logic
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 100) {
-      scrollBtn.style.display = "block";
-    } else {
-      scrollBtn.style.display = "none";
-    }
+    scrollBtn.style.display = window.scrollY > 100 ? "block" : "none";
   });
 
   scrollBtn.addEventListener("click", () => {
@@ -59,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
 // Hamburger menu toggle
 const mobileMenuToggle = document.getElementById("mobile-menu");
 const navLinks = document.querySelector(".nav-links");
@@ -69,6 +66,7 @@ if (mobileMenuToggle && navLinks) {
   });
 }
 
+// Carousel script
 document.addEventListener("DOMContentLoaded", function () {
   const track = document.querySelector(".carousel-track");
   const images = document.querySelectorAll(".carousel-img");
@@ -76,9 +74,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const nextBtn = document.querySelector(".carousel-btn.next");
 
   let currentIndex = 0;
-  const imagesPerView = window.innerWidth <= 768 ? 1 : 3;
+  let imagesPerView = window.innerWidth <= 768 ? 1 : 3;
 
   function updateCarousel() {
+    imagesPerView = window.innerWidth <= 768 ? 1 : 3;
     const offset = currentIndex * (images[0].offsetWidth + 16); // +gap
     track.style.transform = `translateX(-${offset}px)`;
   }
@@ -97,11 +96,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  window.addEventListener("resize", () => {
-    updateCarousel();
-  });
+  window.addEventListener("resize", updateCarousel);
 
-  updateCarousel(); // initial positioning
+  updateCarousel();
+});
+
+// Testimonials slider with swipe
 document.addEventListener("DOMContentLoaded", function () {
   const testimonialTrack = document.querySelector(".testimonial-track");
   const testimonialItems = document.querySelectorAll(".testimonial");
@@ -136,7 +136,6 @@ document.addEventListener("DOMContentLoaded", function () {
     clearInterval(autoSlideInterval);
   }
 
-  // Buttons
   testimonialNext.addEventListener("click", () => {
     stopAutoSlide();
     nextTestimonial();
@@ -149,13 +148,12 @@ document.addEventListener("DOMContentLoaded", function () {
     startAutoSlide();
   });
 
-  // Touch events for swipe
   testimonialTrack.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
     currentX = startX;
     isDragging = true;
     stopAutoSlide();
-    testimonialTrack.style.transition = "none"; // Disable animation during drag
+    testimonialTrack.style.transition = "none";
   });
 
   testimonialTrack.addEventListener("touchmove", (e) => {
@@ -166,15 +164,15 @@ document.addEventListener("DOMContentLoaded", function () {
     testimonialTrack.style.transform = `translateX(${deltaX - testimonialIndex * slideWidth * -1}px)`;
   });
 
-  testimonialTrack.addEventListener("touchend", (e) => {
+  testimonialTrack.addEventListener("touchend", () => {
     if (!isDragging) return;
     isDragging = false;
     const deltaX = currentX - startX;
     if (Math.abs(deltaX) > 50) {
-      if (deltaX < 0) nextTestimonial(); // Swipe left
-      else prevTestimonial(); // Swipe right
+      if (deltaX < 0) nextTestimonial();
+      else prevTestimonial();
     } else {
-      updateTestimonials(); // Snap back if swipe too small
+      updateTestimonials();
     }
     startAutoSlide();
   });
