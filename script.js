@@ -103,4 +103,54 @@ document.addEventListener("DOMContentLoaded", function () {
 
   updateCarousel(); // initial positioning
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const testimonialTrack = document.querySelector(".testimonial-track");
+  const testimonialItems = document.querySelectorAll(".testimonial");
+  const testimonialPrev = document.querySelector(".testimonial-btn.prev");
+  const testimonialNext = document.querySelector(".testimonial-btn.next");
+
+  let testimonialIndex = 0;
+  let autoSlideInterval;
+
+  function updateTestimonials() {
+    const offset = testimonialIndex * testimonialItems[0].offsetWidth;
+    testimonialTrack.style.transform = `translateX(-${offset}px)`;
+  }
+
+  function nextTestimonial() {
+    testimonialIndex = (testimonialIndex + 1) % testimonialItems.length;
+    updateTestimonials();
+  }
+
+  function prevTestimonial() {
+    testimonialIndex =
+      (testimonialIndex - 1 + testimonialItems.length) % testimonialItems.length;
+    updateTestimonials();
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(nextTestimonial, 5000);
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+
+  testimonialNext.addEventListener("click", () => {
+    stopAutoSlide();
+    nextTestimonial();
+    startAutoSlide();
+  });
+
+  testimonialPrev.addEventListener("click", () => {
+    stopAutoSlide();
+    prevTestimonial();
+    startAutoSlide();
+  });
+
+  window.addEventListener("resize", updateTestimonials);
+
+  updateTestimonials();
+  startAutoSlide();
+});
 
