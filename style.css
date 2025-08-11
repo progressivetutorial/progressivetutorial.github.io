@@ -294,6 +294,13 @@ html {
   min-width: 100%;
   flex-shrink: 0;
 }
+/* Testimonial item responsive width */
+.testimonial {
+  flex: 0 0 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 
 .testimonial p {
   font-size: 1rem;
