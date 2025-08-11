@@ -260,6 +260,83 @@ html {
   max-width: 300px;
 }
 
+/* Testimonials Section */
+.testimonials-section {
+  background: #f9fcff;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.testimonials-section h3 {
+  font-size: 1.5rem;
+  color: #1d4ed8;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-slider {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  gap: 1rem;
+}
+
+.testimonial {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.testimonial p {
+  font-size: 1rem;
+  color: #333;
+  font-style: italic;
+  margin-bottom: 0.8rem;
+}
+
+.testimonial span {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.testimonial-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(29, 78, 216, 0.8);
+  color: white;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50%;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.testimonial-btn.prev {
+  left: 10px;
+}
+.testimonial-btn.next {
+  right: 10px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .testimonial {
+    min-width: 100%;
+  }
+}
+
+
 
 /* Hamburger menu for mobile */
 .menu-toggle {
