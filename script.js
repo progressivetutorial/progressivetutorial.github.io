@@ -101,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
   updateCarousel();
 });
 
-// Testimonials slider with swipe
 document.addEventListener("DOMContentLoaded", function () {
   const testimonialTrack = document.querySelector(".testimonial-track");
   const testimonialItems = document.querySelectorAll(".testimonial");
@@ -110,11 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let testimonialIndex = 0;
   let autoSlideInterval;
-  let startX = 0, currentX = 0, isDragging = false;
 
-  function updateTestimonials(smooth = true) {
-    const slideWidth = testimonialItems[0].getBoundingClientRect().width;
-    testimonialTrack.style.transition = smooth ? "transform 0.3s ease" : "none";
+  function updateTestimonials() {
+    const slideWidth = testimonialItems[0].offsetWidth;
     testimonialTrack.style.transform = `translateX(-${testimonialIndex * slideWidth}px)`;
   }
 
@@ -124,7 +121,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function prevTestimonial() {
-    testimonialIndex = (testimonialIndex - 1 + testimonialItems.length) % testimonialItems.length;
+    testimonialIndex =
+      (testimonialIndex - 1 + testimonialItems.length) % testimonialItems.length;
     updateTestimonials();
   }
 
@@ -136,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
     clearInterval(autoSlideInterval);
   }
 
+  // Button clicks
   testimonialNext.addEventListener("click", () => {
     stopAutoSlide();
     nextTestimonial();
@@ -148,37 +147,30 @@ document.addEventListener("DOMContentLoaded", function () {
     startAutoSlide();
   });
 
+  // Swipe support
+  let startX = 0;
   testimonialTrack.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
-    currentX = startX;
-    isDragging = true;
     stopAutoSlide();
-    testimonialTrack.style.transition = "none";
   });
 
-  testimonialTrack.addEventListener("touchmove", (e) => {
-    if (!isDragging) return;
-    currentX = e.touches[0].clientX;
-    const deltaX = currentX - startX;
-    const slideWidth = testimonialItems[0].getBoundingClientRect().width;
-    testimonialTrack.style.transform = `translateX(${deltaX - testimonialIndex * slideWidth * -1}px)`;
-  });
+  testimonialTrack.addEventListener("touchend", (e) => {
+    let endX = e.changedTouches[0].clientX;
+    let diffX = startX - endX;
 
-  testimonialTrack.addEventListener("touchend", () => {
-    if (!isDragging) return;
-    isDragging = false;
-    const deltaX = currentX - startX;
-    if (Math.abs(deltaX) > 50) {
-      if (deltaX < 0) nextTestimonial();
-      else prevTestimonial();
-    } else {
-      updateTestimonials();
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0) {
+        nextTestimonial();
+      } else {
+        prevTestimonial();
+      }
     }
     startAutoSlide();
   });
 
-  window.addEventListener("resize", () => updateTestimonials(false));
+  window.addEventListener("resize", updateTestimonials);
 
   updateTestimonials();
   startAutoSlide();
 });
+
