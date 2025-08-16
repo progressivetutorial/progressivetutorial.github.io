@@ -261,22 +261,33 @@ html {
 }
 
 
-/* Testimonials Section Styling */
+/* Multi-item carousel layout */
+#testimonialCarousel .carousel-inner {
+  display: flex;
+}
+
+#testimonialCarousel .carousel-item {
+  flex: 0 0 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+@media (min-width: 576px) {
+  #testimonialCarousel .carousel-item {
+    flex: 0 0 50%; /* 2 items per slide */
+  }
+}
+
+@media (min-width: 768px) {
+  #testimonialCarousel .carousel-item {
+    flex: 0 0 33.33%; /* 3 items per slide */
+  }
+}
+
 #testimonialCarousel .card {
-  background: rgba(255, 255, 255, 0.9);
+  margin: 0.5rem;
   border: none;
 }
 
-#testimonialCarousel p {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-#testimonialCarousel span {
-  color: #333;
-  margin-top: 10px;
-  display: block;
-}
 
 
 
